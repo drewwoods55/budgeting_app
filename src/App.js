@@ -10,6 +10,7 @@ function App() {
         <h1 className='me-auto'>Budgets</h1>
         <Button variant="primary">Add Budget</Button>
         <Button vasriant="outline-primary">Add Expense</Button>
+        
       </Stack>
       <div 
         style={{ 
