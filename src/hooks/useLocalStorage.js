@@ -1,0 +1,1 @@
+function useLocalStoarge(key, defaultValue)
