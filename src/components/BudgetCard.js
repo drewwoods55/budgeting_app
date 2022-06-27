@@ -7,16 +7,17 @@ export default function BudgetCard({
     max, 
     gray
 }) {
+    // changing background color based apon the amount of expenses compared to budget max
     const classNames = []
-    if (amount > max){
-        classNames.push("danger", "bg-opacityy-10")
-        console.log("expensive")
+    if ( amount > max ){
+        classNames.push("bg-danger", "bg-opacityy-10")
+        
     } else if (gray) {
         classNames.push("bg-light")
     }
 
   return (
-    <Card className={classNames.join("")}>
+    <Card className={classNames.join(" ")}>
         <Card.Body>
             <Card.Title className="d-flex justify-content-between align-items0baseline fw-normal mb-3">
             <div className="me-2">{name}</div>
@@ -35,7 +36,7 @@ export default function BudgetCard({
             />
             <Stack direction="horizontal" gap="2" className="mt-4">
                 <Button variant="outline-primary" className="ms-auto">Add Expense</Button>
-                <Button>View Expense</Button>
+                <Button variant="outline-secondary">View Expenses</Button>
             </Stack>
         </Card.Body>
     </Card>
@@ -46,4 +47,5 @@ function getProgressBarVariant(amount, max){
     const ratio = amount / max 
     if (ratio < 0.5) return "primary"
     if (ratio < 0.75) return "warning"
+    return "danger"
 }
